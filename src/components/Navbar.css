@@ -1,0 +1,7 @@
+#profileInfo #profileName{
+    display: none;
+}
+
+#profileInfo:hover #profileName{
+    display: block;
+}
