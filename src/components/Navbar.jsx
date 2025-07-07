@@ -4,6 +4,7 @@ import './Navbar.css';
 import Swal from 'sweetalert2';
 import { useAuth } from '../contexts/AuthContext';
 import ToggleButton from './common/ToggleButton';
+import { useDarkMode } from '../contexts/ThemeContext';
 
 
 const Navbar = () => {
@@ -11,7 +12,7 @@ const Navbar = () => {
     const { user, logout } = useAuth();
     // console.log(user);
 
-    // const { darkMode, setDarkMode } = useDarkMode();
+    const { darkMode, setDarkMode } = useDarkMode();
 
     const handleLogOut = () => {
         Swal.fire({
@@ -77,11 +78,8 @@ const Navbar = () => {
                 <ul className="items-center hidden space-x-6 lg:flex">
                     {links}
                     <ul className="items-end hidden ml-auto lg:flex lg:gap-2">
-                        {/* <li className='mr-2'>
-                            <ToggleButton data={{ darkMode, setDarkMode }} />
-                        </li> */}
                         <li className='mr-2'>
-                            <ToggleButton />
+                            <ToggleButton data={{ darkMode, setDarkMode }} />
                         </li>
                         <li>
                             {
@@ -111,7 +109,7 @@ const Navbar = () => {
                 <div className="lg:hidden flex">
 
                     <div className='mr-2'>
-                        <ToggleButton />
+                        <ToggleButton data={{ darkMode, setDarkMode }} />
                     </div>
 
                     <div className='flex items-center gap-2'>
