@@ -64,7 +64,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="mb-10 w-full px-[4.166666667%]  py-5 bg-base-200 border-b border-base-300">
+        <div className="sticky top-0 z-100 mb-10 w-full px-[4.166666667%]  py-5 bg-base-200 border-b border-base-300">
             <div className="relative flex items-center justify-between">
                 <div>
                     <span className='flex items-center'>
