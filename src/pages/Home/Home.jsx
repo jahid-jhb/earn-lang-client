@@ -1,10 +1,19 @@
 import React from 'react';
+import Banner from './components/Banner';
+import Stats from './components/Stats';
+import LanguageCategories from './components/LanguageCategories';
+import TutorCard from '../../components/common/TutorCard';
 
 const Home = () => {
+
     return (
-        <div>
-           This is Home Page
-        </div>
+        <>
+           <Banner />
+           <Stats />
+           <LanguageCategories />
+
+           <TutorCard />
+        </>
     );
 };
 
