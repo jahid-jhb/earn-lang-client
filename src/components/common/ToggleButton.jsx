@@ -7,7 +7,7 @@ const ToggleButton = ({ data }) => {
 
     return (
         <>
-            <button onClick={() => setDarkMode(!darkMode)} className='rounded-full transition-all'>
+            <button onClick={() => setDarkMode(!darkMode)} className='rounded-full transition-all cursor-pointer'>
                 {
                     darkMode ?
                         <CiLight size={32} /> :

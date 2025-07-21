@@ -52,15 +52,20 @@ const Navbar = () => {
         <li>
             <NavLink className={navLinkStyle} to='/find-tutors'>Find Tutors</NavLink>
         </li>
-        <li>
-            <NavLink className={navLinkStyle} to='/add-tutorials'>Add Tutorials</NavLink>
-        </li>
-        <li>
-            <NavLink className={navLinkStyle} to='/my-tutorials'>My Tutorials</NavLink>
-        </li>
-        <li>
-            <NavLink className={navLinkStyle} to='/my-booked-tutors'>My Booked Tutors</NavLink>
-        </li>
+        {
+            user &&
+            <>
+                <li>
+                    <NavLink className={navLinkStyle} to='/add-tutorials'>Add Tutorials</NavLink>
+                </li>
+                <li>
+                    <NavLink className={navLinkStyle} to='/my-tutorials'>My Tutorials</NavLink>
+                </li>
+                <li>
+                    <NavLink className={navLinkStyle} to='/my-booked-tutors'>My Booked Tutors</NavLink>
+                </li>
+            </>
+        }
     </>
 
     return (
