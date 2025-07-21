@@ -2,19 +2,22 @@ import React from 'react';
 import Banner from './components/Banner';
 import Stats from './components/Stats';
 import LanguageCategories from './components/LanguageCategories';
-import TutorCard from '../../components/common/TutorCard';
+import WhyChooseUs from './components/WhyChooseUs';
+import JoinAsTutor from './components/JoinAsTutor';
+import FAQs from './components/FAQs';
 
 const Home = () => {
 
     return (
         <>
-           <Banner />
-           <Stats />
-           <LanguageCategories />
-
-           <TutorCard />
+            <Banner />
+            <Stats />
+            <LanguageCategories />
+            <WhyChooseUs />
+            <JoinAsTutor />
+            <FAQs />
         </>
-    );
+    )
 };
 
 export default Home;
