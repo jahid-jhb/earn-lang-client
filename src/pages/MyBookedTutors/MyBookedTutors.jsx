@@ -5,7 +5,9 @@ import Swal from 'sweetalert2';
 import Loading from '../../components/common/Loading';
 
 const MyBookedTutors = () => {
+
     const { user } = useAuth();
+
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -30,7 +32,7 @@ const MyBookedTutors = () => {
 
     const handleReview = async (booking) => {
         try {
-            const res = await api.put(`/tutors/${booking.tutorId}/review`, { review: booking.review+1 }); // increments by 1
+            const res = await api.put(`/tutors/${booking.tutorId}/review?email=${user.email}`, { review: booking.review+1 }); // increments by 1
             if (res.data.modifiedCount > 0) {
                 Swal.fire({
                     title: "Review submitted successfully!",

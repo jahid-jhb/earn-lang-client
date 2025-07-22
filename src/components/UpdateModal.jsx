@@ -2,9 +2,13 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import api from '../services/api'
 import Swal from 'sweetalert2';
+import { useAuth } from '../contexts/AuthContext';
 ;
 
 const UpdateModal = ({ tutorial, setEditingTutorial }) => {
+
+    const {user} = useAuth();
+
     const navigate = useNavigate();
     
 
@@ -20,7 +24,7 @@ const UpdateModal = ({ tutorial, setEditingTutorial }) => {
         };
 
         try {
-            const res = await api.put(`/tutorials/${tutorial._id}`, updatedData); // PUT request
+            const res = await api.put(`/tutorials/${tutorial._id}?email=${user.email}`, updatedData); // PUT request
             if (res.data.modifiedCount > 0) {
                 navigate('/my-tutorials');
                 setEditingTutorial(false);

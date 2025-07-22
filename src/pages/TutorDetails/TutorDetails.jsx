@@ -11,18 +11,20 @@ const TutorDetails = () => {
     const [tutor, setTutor] = useState(null);
     const [booked, setBooked] = useState(null);
     const [loading, setLoading] = useState(true);
+
     const { user } = useAuth();
+
     const navigate = useNavigate();
 
     // Fetch single tutor by ID
     useEffect(() => {
         const fetchTutor = async () => {
             try {
-                const res = await api.get(`/tutors/${details}`);
+                const res = await api.get(`/tutors/${details}?email=${user.email}`);
                 setTutor(res.data);
 
                 
-                const bookedRes = await api.get(`/booked-tutors/${details}`, {
+                const bookedRes = await api.get(`/booked-tutors/${details}?email=${user.email}`, {
                     params: {
                         email: user.email
                     }
@@ -65,7 +67,7 @@ const TutorDetails = () => {
 
 
         try {
-            const res = await api.post('/bookings', bookingData);
+            const res = await api.post(`/bookings?email=${user.email}`, bookingData);
             if (res.data.insertedId) {
                 // alert('Booking successful!');
                 setBooked(bookingData);

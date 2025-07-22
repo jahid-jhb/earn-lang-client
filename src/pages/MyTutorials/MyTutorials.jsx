@@ -6,7 +6,9 @@ import UpdateModal from '../../components/UpdateModal';
 import Loading from '../../components/common/Loading';
 
 const MyTutorials = () => {
+
     const { user } = useAuth();
+
     const [tutorials, setTutorials] = useState([]);
     const [loading, setLoading] = useState(true);
     const [editingTutorial, setEditingTutorial] = useState(false); // state for modal
@@ -41,7 +43,7 @@ const MyTutorials = () => {
 
         if (result.isConfirmed) {
             try {
-                const res = await api.delete(`/tutorials/${id}`);
+                const res = await api.delete(`/tutorials/${id}?email=${user.email}`);
                 if (res.data.deletedCount > 0) {
                     setTutorials(prev => prev.filter(tut => tut._id !== id));
                     Swal.fire('Deleted!', 'Your tutorial has been deleted.', 'success');

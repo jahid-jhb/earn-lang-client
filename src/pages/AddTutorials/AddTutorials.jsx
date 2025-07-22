@@ -21,7 +21,7 @@ const AddTutorials = () => {
         };
 
         try {
-            const res = await api.post('/tutorials', tutorialData); // send POST request using api.js
+            const res = await api.post(`/tutorials?email=${user.email}`, tutorialData); // send POST request using api.js
             if (res.data.insertedId) {
                 // alert('Tutorial added successfully!');
                 Swal.fire({
