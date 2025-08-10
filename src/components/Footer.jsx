@@ -3,8 +3,37 @@ import { SiGoogleplay, SiApple } from 'react-icons/si';
 import logo from '/logo.png';
 import { Link } from 'react-router';
 import { FaXTwitter } from 'react-icons/fa6';
+import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const Footer = () => {
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+
+        const subscriberMail = e.target.email.value;
+        // console.log(subscriberMail);
+        try {
+            const res = await axios.post("https://formsubmit.co/jahidhasanbabu120@gmail.com", { newSubscriber: subscriberMail });
+
+            Swal.fire({
+                title: "You Subscription has been Successful !",
+                icon: "success",
+                timer: 4000,
+                draggable: true
+            });
+
+        } catch (error) {
+            Swal.fire({
+                title: "Something Went Wrong ! </br> Please Try Again...",
+                icon: "error",
+                timer: 4000,
+                draggable: true
+            });
+        }
+
+    }
+
     return (
         <footer className="bg-base-200 py-5 mt-10">
             <div className="max-w-7xl mx-auto px-6 md:px-12 ">
@@ -56,9 +85,9 @@ const Footer = () => {
                 <div className="w-full text-center mt-8 bg-base-300 p-6 rounded-lg">
                     <h3 className="text-lg font-semibold mb-4">Stay Updated!</h3>
                     <p className="text-sm mb-4">Subscribe to our newsletter and get the latest updates directly to your inbox.</p>
-                    
+
                     {/* ============= */}
-                    <div className="join">
+                    <form onSubmit={handleSubscribe} className="join">
                         <div>
                             <label className="input validator join-item">
                                 <svg className="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -73,12 +102,12 @@ const Footer = () => {
                                         <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
                                     </g>
                                 </svg>
-                                <input type="email" placeholder="mail@site.com" required />
+                                <input type="email" name='email' placeholder="mail@site.com" required />
                             </label>
                             <div className="validator-hint hidden">Enter valid email address</div>
                         </div>
-                        <button className="btn btn-neutral join-item">Join</button>
-                    </div>
+                        <input type='submit' value='Join' className="btn btn-neutral join-item" />
+                    </form>
                 </div>
 
                 {/* Social Icons */}
