@@ -13,6 +13,7 @@ import MyTutorials from "../pages/MyTutorials/MyTutorials";
 import UpdateTutorial from "../pages/UpdateTutorial/UpdateTutorial";
 import MyBookedTutors from "../pages/MyBookedTutors/MyBookedTutors";
 import DashboardLayout from "../layouts/DashboardLayout";
+import OurApp from "../pages/OurApp/OurApp";
 
 export const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
                 path: 'find-tutors/:category',
                 Component: FindTutorsByCategory
             },
+            {
+                path: 'our-app',
+                Component: OurApp
+            }
         ]
     },
     {

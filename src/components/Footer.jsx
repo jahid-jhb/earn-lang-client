@@ -62,19 +62,19 @@ const Footer = () => {
                     <div className="w-full md:w-1/4 mb-6 md:mb-0">
                         <h3 className="text-lg font-semibold mb-3">Contact</h3>
                         <ul>
-                            <li><a href="jahid@gmail.com" className="hover:underline">jahid@gmail.com</a></li>
+                            <li><a href="mailto:jahid@gmail.com" className="hover:underline">jahid@gmail.com</a></li>
                             <li><a href="tel:+8801300000000" className="hover:underline">+8801300000000</a></li>
                         </ul>
                     </div>
 
-                    {/* Download Section */}
+                    {/* App Download Section */}
                     <div className="w-full md:w-1/4 mb-6 md:mb-0">
                         <h3 className="text-lg font-semibold mb-3">Get the App</h3>
                         <div className="flex space-x-4">
-                            <a href="#" className="hover:opacity-80">
+                            <a href="/our-app/#android" className="hover:opacity-80">
                                 <SiGoogleplay size={40} />
                             </a>
-                            <a href="#" className="hover:opacity-80">
+                            <a href="/our-app/#ios" className="hover:opacity-80">
                                 <SiApple size={40} />
                             </a>
                         </div>
