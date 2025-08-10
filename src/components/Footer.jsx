@@ -98,10 +98,11 @@ const Footer = () => {
                         <FaXTwitter size={24} />
                     </a>
                     <a
-                        href="https://instagram.com"
+                        target='_blank'
+                        href="https://github.com/jahid-jhb"
                         className="p-2 rounded-full transition-all"
                     >
-                        <FaInstagram size={24} />
+                        <FaGithub size={24} />
                     </a>
                     <a
                         href="https://linkedin.com"
