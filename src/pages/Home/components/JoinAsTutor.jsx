@@ -20,7 +20,7 @@ const JoinAsTutor = () => {
             </p>
             <button
                 onClick={handleJoin}
-                className="btn bg-white text-cyan-700 hover:bg-gray-100 font-semibold px-6"
+                className="btn btn-outline text-cyan-700 hover:bg-cyan-700 hover:text-white font-semibold px-6"
             >
                 Join as a Tutor
             </button>
