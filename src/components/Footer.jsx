@@ -105,7 +105,8 @@ const Footer = () => {
                         <FaGithub size={24} />
                     </a>
                     <a
-                        href="https://linkedin.com"
+                        target='_blank'
+                        href="https://www.linkedin.com/in/devjh/"
                         className="p-2 rounded-full transition-all"
                     >
                         <FaLinkedin size={24} />
