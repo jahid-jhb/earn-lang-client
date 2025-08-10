@@ -1,7 +1,8 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { SiGoogleplay, SiApple } from 'react-icons/si';
 import logo from '/logo.png';
 import { Link } from 'react-router';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
@@ -83,7 +84,8 @@ const Footer = () => {
                 {/* Social Icons */}
                 <div className="flex justify-center space-x-6 mt-8">
                     <a
-                        href="https://facebook.com"
+                        target='_blank'
+                        href="https://www.facebook.com/profile.php?id=61560598102068"
                         className="p-2 rounded-full transition-all"
                     >
                         <FaFacebook size={24} />
